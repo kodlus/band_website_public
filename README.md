@@ -16,11 +16,11 @@ The songs are demos made by Blåräv (I'm the band's guitarist and main songwrit
 
 # Things I would have liked to add
 I'm relatively perfectionistic, and this project has dragged on for long enough. So, the features I would have liked to add are:
-- Node/Express backend for password security (bcrypt) and CRUD operations
-- JasonWebToken (JWT) for safer user verification
-- A search bar
-- Accessibility implementation, like ARIA labels
-- A bit more UI styling
+- Node/Express backend for password security (bcrypt) and CRUD operations. The current "backend" code is very naïve.
+- JasonWebToken (JWT) for safer user verification.
+- A search bar.
+- Accessibility implementation, like ARIA labels.
+- A bit more UI styling.
 
 # Additional information
 The website started as a handful of ideas and kept evolving throughout the project (e.g., the treemap made with D3.js). How I wrote and organized the code reflects this. In other words, the code probably looks "off" here and there. Namespace pollution, non-dry CSS, and inconsistent folder structures do occur. 
