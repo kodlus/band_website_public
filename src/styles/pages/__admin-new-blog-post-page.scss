@@ -1,0 +1,18 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+ADMIN NEW BLOG POST PAGE
+=====================================================*/
+.admin-new-blog-post-page {
+  background-color: c.$white;
+  border-radius: 5px;
+  padding: 1.5em;
+
+  @include m.for-size(phone-only) {
+    padding: 0.5em;
+  }
+}

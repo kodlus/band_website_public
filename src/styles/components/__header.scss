@@ -1,0 +1,119 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+@use "../utilities/_variables" as v;
+
+/*=====================================================
+HEADER
+=====================================================*/
+.header {
+  background-color: c.$backgroundColorDark;
+  background-image: linear-gradient(
+    90deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(226deg 100% 20%) 24%,
+    hsl(222deg 85% 28%) 35%,
+    hsl(227deg 65% 34%) 45%,
+    hsl(227deg 65% 34%) 55%,
+    hsl(222deg 85% 28%) 65%,
+    hsl(226deg 100% 20%) 76%,
+    hsl(0deg 0% 0%) 100%
+  );
+
+  box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 1px 8px 4px rgba(0,0,0,0.5);
+
+  position: sticky;
+  top: 0; 
+  z-index: 999;
+  height: v.$header-height;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-content: center;
+  transition: height 200ms;
+  transition-timing-function: ease-in;
+
+  @include m.for-size(tablet-portrait-up) {
+    height: v.$header-height-small; // Same as .header--small
+  }  
+  @include m.for-size(phone-only) {
+    margin-bottom: calc(v.$header-height-small - 1em);
+    box-shadow: unset;
+    -webkit-box-shadow: unset;
+  } 
+}
+
+.header--small {
+  height: v.$header-height-small;
+}
+
+.header__user {
+  display: flex;
+  width: 100px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: space-between;
+
+  @include m.for-size(tablet-portrait-up) {
+    order: 2;
+  }
+
+  @include m.for-size(phone-only) {
+    justify-content: end;
+    gap: 17px;
+  }
+}
+
+.header__user {
+  font-size: 35px;
+  color: c.$white;
+}
+
+.header__user:hover {
+  text-decoration: none;
+}
+
+.logo {
+  font-family: "Courier Prime", 'Times New Roman', Times, serif;
+  font-size: 30px;
+  text-decoration: none;
+  color: c.$primaryColorText;
+
+  @include m.for-size(tablet-landscape-up) {
+    font-size: 30px;
+  }
+
+  @include m.for-size(phone-only) {
+    font-size: 20px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  
+  @include m.for-size(tablet-portrait-up) {
+    order: 1;
+  }
+
+  // Lazy fix
+   img {
+    width: 70px;
+  }
+
+  @include m.for-size(tablet-landscape-up) {
+    img {
+      width: 60px;
+    }
+  }
+
+  @include m.for-size(phone-only) {
+    img {
+      width: 50px;
+    }
+  }
+}
+

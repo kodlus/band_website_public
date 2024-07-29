@@ -1,0 +1,16 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+
+/*=====================================================
+NOT FOUND / SPLASH PAGE
+=====================================================*/
+.not-found-page {
+  background-color: c.$white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  gap: 35px;
+}

@@ -1,0 +1,42 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+Dynamic Font size for devices [6]
+=====================================================*/
+:root {
+  --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-sm: clamp(1.13rem, calc(0.22vw + 1.08rem ), 1.25rem);
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+}
+
+h2 {
+  font-size: var(--font-size-lg);
+}
+
+h3 {
+  font-size: var(--font-size-md);
+}
+
+/*=====================================================
+General
+=====================================================*/
+body {
+  font-family: Signika Negative, Arial, Helvetica, sans-serif;
+  position: relative;
+  color: #000;
+  line-height: 1.8;
+}
+
+/* 
+  There are also helper/utility classes for typography. These are located in 
+  styles/utilities/__classes.scss
+*/

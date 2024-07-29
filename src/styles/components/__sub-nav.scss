@@ -1,0 +1,50 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+SUB NAVIGATION
+=====================================================*/
+.sub-nav {
+  display: flex;
+  align-items: baseline;
+  gap: 40px;
+  margin-bottom: 0.5em;
+
+  color: c.$black;
+  font-weight: bold;
+  font-size: 1.4rem;
+  background-color: c.$white;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.sub-nav--mobile {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: unset;
+  gap: 10px;
+  
+  button {
+    margin: unset;
+  }
+  
+  
+  // lazy fix
+  select {
+    background-color: unset;
+    font-size: 1.6rem;
+    border: none;
+    margin-right: 5px;
+    //white-space: pre-wrap;
+    font-size: 16px;
+  }
+
+  select:focus,
+  select:active {
+    outline: unset;
+    border-bottom: 1px solid orange;
+  }
+}

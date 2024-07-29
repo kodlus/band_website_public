@@ -1,0 +1,59 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+
+
+/*=====================================================
+SHOP PAGE
+=====================================================*/
+.shop-page-wrapper {
+  border-radius: 5px;
+}
+
+.shop-page {
+  background-color: rgba(0, 0, 0, 0.9);
+  
+  // Lazy fix
+  hr {
+    width: 100%;
+    max-width: 40em;
+    margin: 1em auto;
+  }
+}
+
+.shop-page-header {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  background-color: c.$white;
+  border-radius: 3px;
+}
+
+.shop-page-header__filters {
+  display: flex;
+  margin: 0 auto;
+  max-width: 40em;
+  width: 100%;
+  gap: 30px;
+  justify-content: center;
+}
+
+.shop-page__copy {
+  width: 100%;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+.shop-page__categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 30em;
+
+  // Lazy fix
+  span,
+  label {
+    text-decoration: underline;
+  }
+}

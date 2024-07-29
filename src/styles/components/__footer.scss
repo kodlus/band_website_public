@@ -1,0 +1,30 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_variables" as v;
+
+/*=====================================================
+FOOTER
+=====================================================*/
+.footer { // It is implicitly sticky [5]
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  height: v.$footerHeight;
+  font-size: 0.8rem;
+  color: c.$lightShades;
+  
+  background-color: c.$backgroundColorDark;
+}
+
+
+
+
+
+
+
+

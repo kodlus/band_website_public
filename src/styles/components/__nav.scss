@@ -1,0 +1,48 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+@use "../utilities/_variables" as v;
+
+/*=====================================================
+NAVIGATION
+=====================================================*/
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+
+  font-size: 1.4rem;
+  color: c.$lightShades;
+
+  @include m.for-size(tablet-landscape-up) {
+    font-size: 1.2rem;
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    position: absolute;
+    left: 0;
+    top: v.$header-height-small;
+    padding: 1em;
+    text-align: center;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    width: 100%;
+
+    transition: background-color 300ms linear;
+  }
+}
+
+.nav__list {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0;
+  z-index: 999;
+
+  @include m.for-size(tablet-portrait-up) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

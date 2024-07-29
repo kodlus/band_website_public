@@ -1,0 +1,177 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+CART ITEMS
+=====================================================*/
+.cart-item {
+  height: 100px;
+  display: flex;
+  
+  gap: 20px;
+
+  border: 1px solid black;
+  padding: 1em;
+  background-color: c.$lightShades;
+  color: c.$darkColorText;
+
+  @include m.for-size(tablet-landscape-up) {
+    height: 140px;
+  }
+}
+
+
+.cart-item__img {
+  width: 100px;
+  border: 1px solid black;
+}
+
+.cart-item__details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 7px;
+  align-content: space-around;
+  
+  grid-template-areas: 
+  "link link link"
+  "del quant price";
+
+/*   @include m.for-size(tablet-portrait-up) {
+    grid-template-columns: 1fr auto auto;
+  } */
+
+  @include m.for-size(tablet-landscape-up) {
+    width: unset;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4px;
+    grid-template-areas: 
+    "link link"
+    "price price"
+    "del quantMob";
+  }
+}
+
+.cart-item__link {
+  grid-area: link;
+  align-self: flex-start;
+  padding-bottom: 0;
+}
+
+.cart-item__price {
+  grid-area: price;
+  font-style: italic;
+  margin-left: 1em;
+  
+  @include m.for-size(tablet-landscape-up) {
+    justify-self: start;
+    align-self: center;
+    margin-left: 0;
+    font-size: 1.1rem;
+  }
+}
+
+.cart-item__btn {
+  padding: 0; // For rendering the svg icon in Safari [31]
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: white;
+
+  border: 1px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+
+  @include m.for-size(tablet-landscape-up) {
+    height: 40px;
+    width: 40px;
+  }
+
+  svg {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+.cart-item__quantity {
+  grid-area: quant;
+  width: 60px;
+  height: 35px;
+  justify-self: center;
+}
+
+.cart-item__quantity--mobile {
+  background-color: c.$white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: quantMob;
+  justify-self: end;
+  display: grid;
+  grid-template-columns: auto 50px auto;
+  justify-content: center;
+  align-items: center;
+
+  @include m.for-size(phone-only) {
+    grid-template-columns: auto 35px auto;
+  }
+  
+  .quantity {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cart-item__add {
+    order: 3;
+  }
+  
+  .cart-item__subtract {
+    order: 1;
+  }
+}
+
+
+
+
+.cart-item__btn--delete {
+  grid-area: del;
+  justify-self: start;
+}
+
+
+
+.btn--cart:active {
+  background-color: gray;
+}
+
+.btn--cart-delete:active,
+.btn--cart-delete:focus {
+  background-color: rgb(224, 94, 94);
+}
+
+
+
+
+.cart-item__empty-cart-image {
+  margin-top: 80%;
+  color: white;
+  width: 120px;
+  align-self: center;
+
+  @include m.for-size(tablet-landscape-up) {
+    margin-top: 50%;
+  }
+}
+
+.cart-item__empty-cart-text {
+  align-self: center;
+}

@@ -1,0 +1,24 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+
+/*=====================================================
+LOGIN PAGE
+=====================================================*/
+.login-register-page {  
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-register-form {
+  display: flex;
+  flex-direction: column;
+  background-color: c.$white;
+  width: 350px;
+  gap: 20px;
+  padding: 3em;
+}

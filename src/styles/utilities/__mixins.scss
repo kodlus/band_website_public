@@ -1,0 +1,75 @@
+@use "_variables" as v;
+/*=====================================================
+Padding
+=====================================================*/
+/*==================================
+Header
+==================================*/
+
+
+
+/*==================================
+Header
+==================================*/
+@mixin side-padding-l {
+  padding: 0 v.$pad-l;
+}
+
+@mixin side-padding-m {
+  padding: 0 v.$pad-m;
+}
+
+@mixin side-padding-s {
+  padding: 0 v.$pad-s;
+}
+
+/*==================================
+Main
+==================================*/
+@mixin section-padding-l {
+  padding: 2em v.$pad-l;
+}
+
+@mixin section-padding-m {
+  padding: 2em v.$pad-m;
+}
+
+@mixin section-padding-s-m {
+  padding: v.$pad-s-m;
+}
+
+@mixin section-padding-s {
+  padding: 2em v.$pad-s;
+}
+
+/*==================================
+Proportions
+==================================*/
+@mixin header-push {
+  padding-top: calc(v.$header-height);
+}
+
+@mixin header-push-extra-padding {
+  padding-top: calc(v.$header-height + 1em);
+}
+
+/*=====================================================
+Media query [24]
+=====================================================*/
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) { @content; }
+  
+  } @else if $size == tablet-portrait-up {
+    @media (max-width: 900px) { @content; }
+  
+  } @else if $size == tablet-landscape-up {
+    @media (max-width: 1200px) { @content; }
+  
+  } @else if $size == desktop-up {
+    @media (max-width: 1800px) { @content; }
+  
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1801px) { @content; }
+  }
+}

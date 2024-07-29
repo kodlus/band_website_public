@@ -1,0 +1,101 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+@use "../utilities/_variables" as v;
+
+/*=====================================================
+SIDEBAR
+=====================================================*/
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0.7em;
+
+  position: sticky;
+  position: -webkit-sticky;
+  top: v.$header-height;  // To match header--small class
+  left: 0;
+  height: 25vh;
+  width: 275px;
+  
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: rgb(177, 177, 177);
+}
+
+.sidebar--small {
+  @include m.for-size(desktop-up) {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+
+    flex-direction: row; 
+
+    // To match header--small
+    top: calc(v.$header-height - 25px);
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    button {
+      width: auto;
+    }
+  }
+
+  @include m.for-size(phone-only) {
+    position: relative;
+    top: 0;
+    grid-row: 1 / 1;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.sidebar__filter {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  text-align: center;
+
+  @include m.for-size(desktop-up) {
+    width: auto;
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    width: 20%;
+  }
+
+  @include m.for-size(phone-only) {
+    width: 100%;
+  }
+}
+
+.sidebar__search {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  width: auto;
+  
+  // Lazy fix
+  input {
+
+    border: 1px solid grey;
+    border-right: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: center;
+  }
+
+  button {
+    border: 1px solid grey;
+    border-radius: 3px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+

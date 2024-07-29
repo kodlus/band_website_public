@@ -1,0 +1,136 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+@use "../utilities/_variables" as v;
+
+/*=====================================================
+Variables
+=====================================================*/
+$underlineOffset: 9px;
+$underlineThickness: 4px;
+
+/*=====================================================
+LINKS
+=====================================================*/
+.link {
+  cursor: pointer;
+  position: relative;
+  // The distance between text and underline 
+  padding-bottom: 6px; 
+  // Prevents text underlining stretching beyond the text content
+  width: max-content; 
+  transition: color 200ms linear;
+}
+
+.link:hover,
+.link:focus,
+.link:active {
+  color: c.$main;
+  text-decoration: underline;
+}
+
+.link--dark-accent {
+  color: #13235b;
+}
+
+.link--dark-accent:hover,
+.link--dark-accent:focus{
+  color: #000;
+}
+
+.link--light-accent {
+  color: c.$lightAccent;
+}
+
+.link--light-accent:hover,
+.link--light-accent:focus {
+  color: c.$white;
+}
+
+.link--reset {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link--nav::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+
+  // underline color
+  background-image: linear-gradient(90deg, c.$main, c.$lightShades) ; 
+
+  // vertical width and thickness of underline
+  background-size: 0 $underlineThickness; 
+  background-repeat: no-repeat;
+
+  // starting position of underline
+  background-position: left bottom; 
+
+  // duration and timing style of animation
+  transition: background-size 0.2s ease-in; 
+}
+
+.link--nav:hover::before {
+   // vertical width and thickness of underline
+  background-size: 100% $underlineThickness;
+  
+  background-image: linear-gradient(
+    90deg, c.$main, c.$lightShades);
+}
+
+.link--nav:hover,
+.link--nav:focus {
+  text-decoration: none;
+  color: inherit;
+  background-image: linear-gradient(90deg, c.$main, c.$lightShades); // [7]
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.link--active,
+.link--active:focus {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: c.$white;
+  text-underline-offset: $underlineOffset;
+  text-decoration-thickness: $underlineThickness; 
+  background-image: linear-gradient(90deg, c.$main, c.$lightShades);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include m.for-size(tablet-landscape-up) {
+    text-underline-offset: calc($underlineOffset - 1px) ;
+  }
+}
+
+.link--sub-nav {
+  color: c.$black;
+}
+
+.link--active-sub-nav {
+  text-decoration: underline;
+  text-decoration-thickness: $underlineThickness;
+  text-underline-offset: $underlineOffset;
+  color: c.$main;
+}
+
+.link--sub-nav:hover,
+.link--sub-nav:focus {
+  transition: none;
+  color: c.$main;
+  text-decoration-thickness: $underlineThickness;
+  text-underline-offset: $underlineOffset;
+}
+
+.link--simple:hover,
+.link--simple:focus {
+  text-decoration: underline;
+} 
+

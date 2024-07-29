@@ -1,0 +1,96 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+ICONS
+=====================================================*/
+.icon {
+  fill: c.$white;
+  transition: fill 200ms linear;
+}
+
+.icon--logged-in {
+  fill: #c9f781;
+  transition: fill 200ms linear;
+}
+
+.icon:hover,
+.icon:focus {
+  fill: c.$main;
+}
+
+.icon--burger {
+  display: none;
+  align-self: center;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-size: 35px;
+
+  * { // Targeting the icon inside the burger
+    color: c.$primaryColorText;
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 0;
+  }
+}
+
+.shopping-cart-icon {
+  position: relative;
+  width: 40px;
+  cursor: pointer;
+  /* margin-left: 30px; */
+}
+
+.shopping-cart-icon__indicator {
+  position: absolute;
+  font-size: 18px;
+  top: -20px;
+  left: 37%;
+  
+  transition: color 200ms linear;
+}
+
+.shopping-cart-icon__indicator:hover {
+  color: c.$main;
+}
+
+.shopping-cart-icon__indicator:hover {
+  color: c.$main;
+}
+
+.shopping-cart-icon:hover,
+.shopping-cart-icon:focus {
+  color: c.$main;
+}
+
+.shopping-cart-icon:hover,
+.shopping-cart-icon:focus {
+  .icon,
+  .shopping-cart-icon__indicator {
+    color: c.$main;
+  }
+}
+
+// Targets the shopping cart icon if only the shopping cart indicator is
+// hovered
+body :has(.shopping-cart-icon__indicator:hover) .icon--set,
+// Targets the shopping cart icon if only the shopping cart button is
+// focused
+body :has(.shopping-cart-icon:focus) .icon--set {
+  fill: c.$main;
+}
+
+

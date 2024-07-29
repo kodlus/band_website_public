@@ -1,0 +1,84 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+USER ORDER HISTORY PAGE [26]
+=====================================================*/
+.user-order-history-page {
+  background-color: c.$white;
+  padding: 1em;
+  padding-top: 0.9em;
+}
+
+.user-order-history {
+  // Lazy fix
+  text-align: center;
+
+  @include m.for-size(phone-only) {
+    margin-top: 1.75em;
+  }
+}
+
+// Lazy fix
+table {
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 10px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+th {
+  border-bottom: 1px solid black;
+}
+
+th,
+td {
+  padding: 0.5em;
+}
+
+td {
+  vertical-align: baseline;
+
+  @include m.for-size(phone-only) {
+    font-size: 0.8rem;
+  }
+}
+
+
+// Apply a border to the right of all but the last column 
+table th:not(:last-child),
+table td:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+// Apply a border to the bottom of all but the last row
+table>thead>tr:not(:last-child)>th,
+table>thead>tr:not(:last-child)>td,
+table>tbody>tr:not(:last-child)>th,
+table>tbody>tr:not(:last-child)>td,
+table>tfoot>tr:not(:last-child)>th,
+table>tfoot>tr:not(:last-child)>td,
+table>tr:not(:last-child)>td,
+table>tr:not(:last-child)>th,
+table>thead:not(:last-child),
+table>tbody:not(:last-child),
+table>tfoot:not(:last-child) {
+ border-bottom: 1px solid black;
+}
+
+th {
+  background-color: c.$gray;
+}
+
+tr:nth-child(odd) {
+  background-color: c.$white;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(207, 206, 206);
+  border-radius: 5px;
+}

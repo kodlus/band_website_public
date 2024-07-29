@@ -1,0 +1,41 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+
+/*=====================================================
+INFO BOX
+=====================================================*/
+.info-box {
+  background-color: c.$main;
+  padding: 0.7em;
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  min-height: 25vh;
+  max-height: 50vh;
+  width: 300px;
+  border-radius: 3px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  white-space: pre-line;
+
+  .info-box__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      width: 35px;
+      height: 35px;
+      background-color: c.$mainComplementary;
+    }
+  }
+
+  .info-box__copy {
+    overflow-x: auto;
+  }
+}

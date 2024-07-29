@@ -1,0 +1,95 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+SHOPPING CART
+=====================================================*/
+.shopping-cart {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50px 1.5fr 0.25fr;
+  grid-template-areas: 
+    "header"
+    "items"
+    "summary";
+  gap: 20px;
+  width: 400px;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  background-color: c.$blackLighter;
+
+  // Lazy fix
+  h3,
+  p {
+    color: #fff;
+  }
+
+  @include m.for-size(phone-only) {
+    width: 100%;
+  }
+}
+
+.shopping-cart__header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shopping-cart__items {
+  grid-area: items;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.shopping-cart__summary {
+  background-color: c.$lightShades;
+  grid-area: summary;
+  justify-self: end;
+  width: 100%;
+  border-radius: 3px;
+  display: grid;
+  padding: 0.8em;
+  grid-template-areas: 
+    "total sum"
+    "order order";
+}
+
+.shopping-cart__total,
+.shopping-cart__sum  {
+  font-weight: 700;
+}
+
+.shopping-cart__total {
+  grid-area: total;
+  font-weight: 700;
+}
+
+.shopping-cart__sum {
+  font-weight: 700;
+  grid-area: sum;
+  justify-self: end;
+}
+
+.shopping-cart__order {
+  grid-area: order;
+  height: 50px;
+  align-self: end;
+}
+
+.shopping-cart__btn--close {
+  height: 30px;
+  width: 30px;
+}
+

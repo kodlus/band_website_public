@@ -1,0 +1,145 @@
+/*=====================================================
+Mixin
+=====================================================*/
+@use "_mixins" as m;
+@use "_variables" as v;
+@use "_colors" as c;
+
+/*=====================================================
+UTILITY CLASSES
+=====================================================*/
+/*================================
+General
+================================*/
+.active {
+  opacity: 1; 
+}
+
+.center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.inline {
+  display: inline;
+}
+
+.login-first {
+  text-align: center;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.play {
+  background-color: rgb(173, 211, 198);
+  animation: pulse ease-in-out 4000ms infinite;
+}
+
+.play--active {
+  svg {
+    color: rgb(243, 103, 9);
+  }
+}
+
+.play--pause {
+  svg {
+    color: rgb(133, 201, 33);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #02a9be;
+  }
+  50% {
+   background-color: rgba(17, 76, 80);
+  }
+  100%{
+    background-color: #02a9be;
+  }
+}
+
+.push {
+  @include m.header-push;
+}
+
+.push-extra-padding {
+  @include m.header-push-extra-padding;
+}
+
+.selected {
+  background-color: #E17654;
+  color: #FFEAD0;
+}
+
+.sold-out {
+  background-color: rgb(85, 107, 112);
+  color: rgb(235, 238, 245);
+}
+
+.sold-out:hover {
+  cursor:not-allowed;
+}
+
+.start {
+  justify-content: start;
+}
+
+.red {
+  background-color: rgb(192, 5, 5);
+  color: white;
+}
+
+.red:hover,
+.red:focus {
+  background-color: rgb(216, 34, 34);
+}
+
+.green {
+  background-color: rgb(152, 236, 152);
+}
+
+.green:hover,
+.green:focus {
+  background-color: rgb(18, 240, 18);
+}
+
+.yellow {
+  background-color: rgb(233, 182, 87);
+}
+
+.yellow:hover,
+.yellow:focus {
+  background-color: rgb(255, 218, 10);
+}
+
+/*================================
+Typography
+================================*/
+.title {
+  color: #fff;
+  line-height: 1.4;
+  max-width: 10em;
+  margin: 0 auto 0.3em auto;
+}
+
+.title--dark {
+  color: c.$darkColorText;
+}
+
+.title--nmb {
+  margin: 0;
+}
+
+.sub-heading {
+  margin-bottom: 1em;
+}
+
+.shorten {
+  font-size: 0.9rem;
+}

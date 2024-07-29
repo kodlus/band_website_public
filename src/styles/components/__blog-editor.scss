@@ -1,0 +1,16 @@
+/*=====================================================
+BLOG EDITOR
+=====================================================*/
+.blog-editor {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  max-width: 44em;
+  margin: 0 auto;
+
+  // Lazy fix
+  label {
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,18 @@
+/*=====================================================
+BLOG PAGE
+=====================================================*/
+.blog-page {
+  background-color: rgba(0, 0, 0, 0.9);
+
+  .blog-page__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  // Lazy fix
+  h1 {
+    text-align: center;
+    color: #fff;
+  }
+}

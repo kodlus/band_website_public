@@ -1,0 +1,402 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+@use "../utilities/_variables" as v;
+
+/*=====================================================
+Variables
+=====================================================*/
+$barWidth: 4px;
+$barWidthPhone: 4px;
+$sliderThumbPhone: 14px;
+
+/*=====================================================
+AUDIO PLAYER FOLDER
+=====================================================*/
+/*=============================
+Audio player
+==============================*/
+.audio-player {
+  border: 3px solid black;
+  background: c.$blackLighter;
+  z-index: 99;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+
+  transition: none;
+
+  @include m.for-size(phone-only) {
+    top: v.$header-height-small;
+    bottom: unset;
+    border: unset;
+  }
+}
+
+.audio-player__inner {
+  display: grid;
+  grid-template-columns: 150px auto auto auto; 
+  justify-content: center;
+  gap: 35px;
+  
+  margin: 0 auto;
+  
+  @include m.for-size(tablet-landscape-up) {
+    grid-template-columns: 100px auto auto auto;
+  }
+
+  @include m.for-size(phone-only) {
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    gap: 5px;
+  }
+}
+
+.audio-player-boost {
+  margin-bottom: v.$footerHeight;
+}
+
+/*=============================
+Display track
+==============================*/
+// This variables are manipulated in 
+// DisplayTrack.jsx
+:root {
+  --trackLength: 0px;
+  --timeLength: 0ms;
+}
+
+.display-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #02a9be;
+  border-radius: 3px;
+
+  transition: background-color 250ms ease;
+
+  @include m.for-size(phone-only) {
+    justify-self: start;
+    width: 100px;
+  }
+}
+
+// [30]
+.display-track__info {
+  overflow: hidden;
+}
+
+.display-track__title {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 37px;
+  padding: 0 0.3em;
+  white-space: nowrap;
+}
+
+.scroll {
+  animation: scroll linear var(--timeLength) infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%); 
+  }
+  10%{
+    transform: translateX(0%); 
+  }
+  50% {
+    transform: translate(calc(var(--trackLength) - 100%));
+  }
+  60% {
+    transform: translate(calc(var(--trackLength) - 100%));
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/*=============================
+Controls
+==============================*/
+.controls-wrapper {
+  display: flex;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  @include m.for-size(phone-only) {
+    width: 125px;
+  }
+}
+
+.controls button, .volume button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/*=============================
+Volume
+==============================*/
+.volume {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+
+  @include m.for-size(phone-only) {
+    grid-column: 3 / 4;
+  }
+}
+
+.btn--audio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 25px;
+    height: 25px;
+    color: rgb(255, 255, 255);
+
+    @include m.for-size(phone-only) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+
+// Lazy fix
+.btn--active {
+  svg {
+    color: rgb(1, 111, 214);
+  }
+}
+ 
+.volume-range-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: -90px;
+  left: -30px;
+  transform: rotate(270deg);
+  background-color: black;//#c1b6bc;
+  height: 50px;
+  padding: 0 10px;
+  height: 60px;
+  border-radius: 5px;
+  
+  @include m.for-size(phone-only) {
+    top: unset;
+    bottom: -68px;
+    left: unset;
+    right: 0px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    transform: rotate(0deg);
+    z-index: 999;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */ 
+  .volume-range-wrapper {
+    left: -22px;
+  }
+}
+
+.volume-range {
+  width: 150px;
+
+  @include m.for-size(tablet-landscape-up) {
+    width: 100px;
+  }
+}
+
+.volume-range--mobile {
+  width: 100px;
+}
+
+/*=============================
+Custom Input range 
+=============================*/
+// Input range - chrome and safari
+input[type="range"] {
+  height: $barWidthPhone;
+  --range-progress: 0;
+  -webkit-appearance: none;
+  position: relative;
+  background:#ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  align-self: center;
+}
+
+// played progress length - Chrome & safari
+input[type="range"]::before {
+  content: '';
+  height: 2px;
+  background: #f50;
+  width: var(--range-progress);
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// slider thumb - chrome and safari //
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: $sliderThumbPhone;
+  width: $sliderThumbPhone;
+  border-radius: 50%;
+  border: none;
+  background-color: #f50;
+  cursor: pointer;
+  position: relative;
+  z-index: 9999;
+}
+
+// dragging thumb - chrome and safari 
+input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+
+  
+// Input range - firefox 
+input[type="range"]::-moz-range-track {
+  position: relative;
+  background:#ccc;
+  height: 4px;
+  border-radius: 2px;
+  cursor: pointer;
+  align-self: center;
+}
+
+// played progress length - firefox 
+input[type="range"]::-moz-range-progress {
+  background: #f50;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  height: 4px;
+}
+
+// slider thumb - firefox 
+input[type="range"]::-moz-range-thumb {
+  height: $sliderThumbPhone;
+  width: $sliderThumbPhone;
+  border-radius: 50%;
+  background: #f50;
+  cursor: pointer;
+  border: transparent;
+  position: relative;
+  z-index: 9999;
+}
+
+// dragging thumb - firefox
+input[type="range"]:active::-moz-range-thumb {
+  transform: scale(1.2);
+}
+
+/*=============================
+Progress bar
+==============================*/
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+
+  // Input range - chrome and safari
+  input[type="range"] {
+    --range-progress: 0;
+    -webkit-appearance: none;
+    position: relative;
+    background:#ccc;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  // played progress length - Chrome & safari
+  input[type="range"]::before {
+    content: '';
+    height: 3px;
+    background: #f50;
+    width: var(--range-progress);
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  // Input range - firefox 
+  input[type="range"]::-moz-range-track {
+    position: relative;
+    background:#ccc;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  // played progress length - firefox 
+  input[type="range"]::-moz-range-progress {
+    background: #f50;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    height: 3px;
+  }
+
+  @include m.for-size(phone-only) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/* time */
+.time {
+  color: rgb(216, 216, 248);
+  font-size: 13px;
+  line-height: 46px;
+
+  @include m.for-size(phone-only) {
+    display: none;
+  }
+}
+
+.time.current {
+  color: #f50;
+}
+
+/* Top bar */
+.top__bar {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  background-color: #fafafa;
+  border-bottom: 1px solid #f0f0f2;
+}
+
+.top__bar a {
+  color: inherit;
+}
+
+.top__bar p {
+  margin: 0;
+}

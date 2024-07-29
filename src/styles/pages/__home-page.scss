@@ -1,0 +1,131 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+@use "../utilities/_variables" as v;
+
+/*=====================================================
+Box-shadow
+=====================================================*/
+.hero,
+.next-event,
+.merch-sample,
+.about {
+  box-shadow: 0px 7px 13px 3px rgba(0,0,0,0.51);
+  -webkit-box-shadow: 0px 7px 13px 3px rgba(0,0,0,0.51);
+}
+
+/*=====================================================
+HOME PAGE
+=====================================================*/
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: c.$backgroundColorDark;
+}
+
+.next-event {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-image: linear-gradient(
+    90deg,
+    hsl(205deg 50% 58%) 0%,
+    hsl(203deg 50% 58%) 24%,
+    hsl(201deg 51% 59%) 35%,
+    hsl(199deg 50% 59%) 45%,
+    hsl(197deg 49% 60%) 55%,
+    hsl(195deg 48% 61%) 65%,
+    hsl(193deg 47% 62%) 76%,
+    hsl(191deg 45% 64%) 100%
+  );
+}
+
+.about,
+.merch-sample {
+  h2 {
+    text-align: center;
+  }
+}
+
+.merch-sample {
+  background-image: linear-gradient(
+    90deg,
+    hsl(227deg 65% 34%) 0%,
+    hsl(230deg 52% 38%) 24%,
+    hsl(231deg 43% 41%) 35%,
+    hsl(232deg 37% 45%) 45%,
+    hsl(232deg 32% 48%) 55%,
+    hsl(233deg 29% 51%) 65%,
+    hsl(233deg 28% 55%) 76%,
+    hsl(233deg 27% 58%) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  color: #fff;
+
+  .gallery { // Prevents home-page from overriding the product cards' color prop
+    color: c.$darkColorText; 
+
+    @include m.for-size(tablet-landscape-up) {
+      gap: 40px
+    }
+  }
+
+  a {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.about {
+  background-image: linear-gradient(
+    90deg,
+    hsl(205deg 50% 58%) 0%,
+    hsl(203deg 50% 58%) 24%,
+    hsl(201deg 51% 59%) 35%,
+    hsl(199deg 50% 59%) 45%,
+    hsl(197deg 49% 60%) 55%,
+    hsl(195deg 48% 61%) 65%,
+    hsl(193deg 47% 62%) 76%,
+    hsl(191deg 45% 64%) 100%
+  );
+}
+
+.about-wrapper {
+  margin: 0 auto;
+}
+
+.about__copy {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  gap: 18px;
+  line-height: 1.7;
+  max-width: 40em;
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+
+  @include m.for-size(tablet-landscape-up) {
+    margin-bottom: 2em;
+  }
+}
+
+.about__image {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+/* .about__copy,
+.about__image {
+  @include m.for-size(tablet-landscape-up) {
+    flex: 100%;
+    padding-right: 0;
+    max-width: 40em
+  }
+} */
+ 

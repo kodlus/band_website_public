@@ -1,0 +1,111 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+PRODUCT LIST CARD
+=====================================================*/
+.product-list-card {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  align-items: flex-start;
+  gap: 20px;
+  border: black 2px solid;
+  overflow: hidden;
+
+  @include m.for-size(tablet-portrait-up) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+  }
+}
+
+.product-list-card__header {
+  grid-row: 1 / 1 ;
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid black;
+  padding-bottom: 0.6em;
+  
+  // Lazy fix
+  p {
+    margin: 0 0 0 auto;
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 20px;
+    order: 1;
+
+    // Lazy fix
+    p {
+      order: 1;
+    }
+  }
+}
+
+.product-list-card__info {
+  display: grid;
+
+  @include m.for-size(tablet-portrait-up) {
+    order: 2;
+  }
+}
+
+.product-list-card__img {
+  grid-row: 2 / 2;
+  max-width: 150px;
+  border-radius: 50%;
+  justify-self: center;
+
+  @include m.for-size(tablet-portrait-up) {
+
+  }
+}
+
+// Targets the image inside .product-list-card__info elements
+.product-list-card__info:has(> img){
+  @include m.for-size(tablet-portrait-up) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: center;
+
+    // Extra margin for pushing down the product-list-card__options elements
+    margin-bottom: 1em;
+  }
+}
+
+.product-list-card__options {
+  grid-column: 2 / -1;
+  justify-self: end;
+  display: flex;
+  gap: 20px;
+
+  // Lazy fix
+  button {
+    width: 150px;
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    order: 4;
+    width: 100%;
+    justify-content: space-between;
+
+    // Lazy fix
+    button {
+      width: 40%;
+    }
+  }
+}

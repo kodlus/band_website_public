@@ -1,0 +1,52 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+BLOG POST PAGE
+=====================================================*/
+.contact-page {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+}
+
+.contact-page__content {
+  margin: 0 auto;
+  padding: 2em 3em;
+  background-color: c.$white;
+  border-radius: 5px;
+  max-width: 900px;
+
+  box-shadow: 0px 9px 9px 2px rgba(0,0,0,0.41);
+  -webkit-box-shadow: 0px 9px 9px 2px rgba(0,0,0,0.41);
+ 
+  @include m.for-size(phone-only) {
+    padding: 1em;
+  }
+}
+
+.contact-page__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+.contact-card {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact-card__social-media{
+ .icon--social-media {
+  font-size: 2em;
+  display: inline;
+ }
+}

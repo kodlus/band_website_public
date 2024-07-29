@@ -1,0 +1,120 @@
+[1]
+https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
+[2]
+https://blog.logrocket.com/building-carousel-component-react-hooks/
+
+[3]
+https://tinloof.com/blog/how-to-build-an-auto-play-slideshow-with-react 
+
+[4]
+https://www.react-graph-gallery.com/treemap
+
+[5]
+https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+
+[6]
+https://dev.to/laurilllll/how-to-create-responsive-typography-using-css-three-different-methods-explained-50f8
+
+[7]
+https://cssgradient.io/blog/css-gradient-text/ 
+
+[8]
+https://stackoverflow.com/questions/28773839/react-form-onchange-setstate-one-step-behind
+(rc-chandan's answer)
+
+[9]
+https://stackoverflow.com/questions/48024465/javascript-return-only-unique-values-in-an-array-of-objects
+(Michał Perłakowski's answer)
+
+
+[10]
+https://stackoverflow.com/questions/19395257/how-to-count-duplicate-value-in-an-array-in-javascript
+(SheetJS's answer, whoami - fakeFaceTrueSoul's edit)
+
+[11]
+https://stackoverflow.com/questions/5732043/how-to-call-reduce-on-an-array-of-objects-to-sum-their-properties 
+(Casey Chu's answer)
+
+[12]
+https://blog.logrocket.com/mirage-js-tutorial-mocking-apis-in-react/
+
+[13]
+https://stackoverflow.com/questions/36904185/react-router-scroll-to-top-on-every-transition
+(zurfyx's answer)
+
+[14]
+https://www.delftstack.com/howto/react/get-window-width-react/
+
+[15]
+https://stackoverflow.com/questions/67979861/how-to-delete-an-element-from-array-in-react 
+(samridhgupta's answer)
+
+[16]
+https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable
+
+[17]
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
+
+[18]
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables
+
+[19]
+https://reactrouter.com/en/main/hooks/use-search-params
+
+[20]
+https://dev.to/rakumairu/simple-react-carousel-24m0 
+
+[21]
+https://css-tricks.com/lets-make-a-fancy-but-uncomplicated-page-loader/
+
+[22]
+https://www.joshwcomeau.com/css/custom-css-reset/
+
+[23]
+https://codepen.io/t_afif/pen/dyZOBex 
+
+[24]
+https://dev.to/rembertdesigns/how-to-write-media-queries-with-sass-mixins-32e
+
+[25]
+https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior 
+
+[26]
+https://unused-css.com/blog/css-rounded-table-corners/ 
+
+[27]
+https://blog.logrocket.com/building-audio-player-react/ 
+
+[28]
+https://stackoverflow.com/questions/9439725/how-to-detect-if-browser-window-is-scrolled-to-bottom
+(mVchr's answer, Silver Zachara's edit)
+
+[29]
+https://javascript.info/bubbling-and-capturing
+
+[30]
+https://stackoverflow.com/questions/59225635/how-to-transform-translatex-an-element-until-the-end-of-its-content-hits-the-rig#59230200
+(Temani Afif's answer)
+
+[31]
+https://stackoverflow.com/questions/59690443/svg-rendering-smaller-in-mobile-safari
+(Blake Plumb's answer)
+
+[32]
+https://css-tricks.com/a-complete-guide-to-css-media-queries/ 
+
+// Unsorted
+https://www.codeinwp.com/snippets/animated-underline-on-hover-with-css/
+
+https://medium.com/@sidbentifraouine/responsive-animated-top-navigation-bar-with-react-transition-group-fd0ccbfb4bbb
+
+
+Admin Dashboard Layout examples:
+https://cdnwebsite.databox.com/wp-content/uploads/2023/06/29085710/Social-Networks-Dashboard-1000x563.jpg
+
+https://www.creative-tim.com/blog/content/images/wordpress/2020/03/adminkit-bootstrap-admin.png
+
+
+// Image credits
+// <a href="https://www.flaticon.com/free-icons/shopping-cart" title="shopping cart icons">Shopping cart icons created by Kiranshastry - Flaticon</a>

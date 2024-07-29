@@ -1,0 +1,54 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+ABOUT PAGE
+=====================================================*/
+.about-page {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+
+  .about-page__content {
+    margin: 0 auto;
+    padding: 2em 3em;
+    background-color: c.$white;
+    border-radius: 5px;
+    max-width: 900px;
+
+    box-shadow: 0px 9px 9px 2px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 0px 9px 9px 2px rgba(0,0,0,0.41);
+    
+    @include m.for-size(phone-only) {
+      padding: 1em;
+    }
+  }
+
+  .float {
+    width: 100px;
+    margin: 5px;
+    float: left;
+
+    @include m.for-size(phone-only) {
+      width: 50px;
+    }
+  }
+
+  .about-page__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 40em;
+    margin: 0 auto 2.5em auto; 
+  }
+  
+  .about-page__band-img {
+    margin: 0 auto;
+    max-width: 40em;
+    border-radius: 5px;
+    box-shadow: 0px 9px 9px 2px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 0px 9px 9px 2px rgba(0,0,0,0.41);
+  }
+}

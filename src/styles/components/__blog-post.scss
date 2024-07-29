@@ -1,0 +1,57 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+BLOG POST
+=====================================================*/
+.blog-post {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 1em;
+  
+  background-color: c.$lightShades;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+  // This renders the line-breaks in the blog post data
+  white-space: pre-line;
+}
+
+.blog-post__title,
+.blog-post__date {
+  text-align: center;
+}
+
+.blog-post__date {
+  display: block;
+}
+
+.blog-post__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  gap: 3em;
+  padding: 1em 2em 2.5em 2em;
+
+  @include m.for-size(phone-only) {
+    padding: 1em;
+  }
+}
+
+.blog-post__copy {
+  width: 100%;
+  max-width: 40em;
+  align-self: center;
+}
+
+.blog-post__img {
+  max-width: 40em;
+  border-radius: 30px;
+  align-self: center;
+}

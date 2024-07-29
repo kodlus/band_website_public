@@ -1,0 +1,35 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+
+/*=====================================================
+ADMIN BLOG POST
+=====================================================*/
+.admin-blog-post {
+  width: 40em;
+  margin: 0 auto;
+  padding: 1.7em;
+
+  box-shadow: 0px 9px 9px 2px rgba(0,0,0,0.41);
+  -webkit-box-shadow: 0px 9px 9px 2px rgba(0,0,0,0.41);
+
+  background:  
+    c.$main // Fallback color
+    center
+    no-repeat;
+    background-size: cover;
+
+    // This renders the line-breaks
+    white-space: pre-line;
+
+    .admin-blog-post__toolbox {
+      display: flex;
+      justify-content: end;
+      gap: 10px;
+
+      // Lazy fix
+      margin-top: 1.3em;
+    }
+}
+

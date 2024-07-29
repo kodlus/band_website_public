@@ -1,0 +1,54 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+USER INFORMATION PAGE
+=====================================================*/
+.user-information {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.25em;
+  background-color: c.$white;
+  padding: 1em;
+  padding-top: 0.9em;
+  border-radius: 5px;
+
+  // Lazy solution
+  label, input {
+    max-width: 500px;
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    padding: 1.75em 0.5em;
+  }
+}
+
+.user-information__footer {
+  display: flex;
+  gap: 20px;
+
+  @include m.for-size(phone-only) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.user-information__login,
+.user-information__shipping {
+  display: flex;
+  flex-direction: column;
+  
+
+  // Lazy fix
+  input {
+    margin-bottom: 10px;
+  }
+}
+
+
+

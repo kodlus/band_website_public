@@ -1,0 +1,25 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+BLOG POST PREVIEW
+=====================================================*/
+.blog-post-preview {
+  padding: 1em;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 5px;
+  
+  background-color: c.$lightShades;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+  // This renders the line-breaks in the blog post data
+  white-space: pre-line;
+
+  text-align: center;
+}

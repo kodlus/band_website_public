@@ -1,0 +1,38 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+
+/*=====================================================
+ADMIN BLOG POST PAGE
+=====================================================*/
+.admin-blog-posts-page {
+  background-color: c.$white;
+  border-radius: 5px;
+  padding: 1em 0;
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 25px;
+  position: relative;
+}
+
+.blog-posts {
+  grid-column: 3 / 4;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (max-width: 1325px) {
+  .blog-posts{
+    grid-column: 1 / -1;
+    grid-row: 2 / 2;
+    width: 100%;
+  }
+
+  .admin-blog-post {
+    width: 100%;
+  }
+}

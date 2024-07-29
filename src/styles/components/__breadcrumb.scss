@@ -1,0 +1,68 @@
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_colors" as c;
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+Variables
+=====================================================*/
+$pad-l: 24em;
+:root {
+  --pad-l: 24em;
+  --pad-m: 5em;
+  --pad-s-m: 1.5em; 
+  --pad-s: 1em;
+}
+
+/*=====================================================
+BREADCRUMB
+=====================================================*/
+.breadcrumb {
+  background-color: c.$lightShades;
+  padding: 0.5em 0;
+  @include m.for-size(big-desktop-up) {
+    padding-left: $pad-l;
+  }
+
+  @include m.for-size(desktop-up) {
+    padding-left: calc($pad-l - 11em);
+  }
+
+  @include m.for-size(tablet-landscape-up) {
+    padding-left: var(--pad-m);
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    padding-left: var(--pad-s-m);
+  }
+
+  @include m.for-size(phone-only) {
+    padding-left: var(--pad-s);
+  }
+}
+
+.breadcrumb--edit {
+  background-color: c.$white;
+  padding: 0;
+  @include m.for-size(big-desktop-up) {
+    margin-left: 0;
+  }
+
+  @include m.for-size(desktop-up) {
+    margin-left: 0;
+  }
+
+  @include m.for-size(tablet-landscape-up) {
+    margin-left: 0;
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    margin-left: 0;
+  }
+
+  @include m.for-size(phone-only) {
+    padding: 1em 0;
+    margin-left: 0;
+  }
+}

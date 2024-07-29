@@ -1,0 +1,35 @@
+/*=====================================================
+__colors.scss
+=====================================================*/
+$primaryColor: #B23047;
+$primaryColorVariant: #EF8497;
+$primaryColorComplementary: #84EFDC;
+$primaryColorText: #fff;
+$secondaryColor: #754092;
+$secondaryColorVariant: #471364;
+$secondaryColorText: #fff;
+$backgroundColorDark: #222023;
+$backgroundColorDark500: #262626;
+$darkColorText: #1b1a1b;
+
+
+/*=====================================================
+Colormind color system
+http://colormind.io/bootstrap/
+=====================================================*/
+$main: #5d9cc9;//#ef8496;
+$mainComplementary: #ea6f2e;
+$lightAccent: #79bdcc; //#8dc1f1;
+$darkAccent: #767db0; //#93ace0;
+$lightShades: #f0f0f3; //#f9f9f6;
+$darkShades: #1e368d; //#7b9ccb;
+$white: white;
+$black: black;
+$blackLighter: #191919;
+$gray: #777777;
+$disable: gray;
+
+
+html {
+  background-color: $lightShades;
+}

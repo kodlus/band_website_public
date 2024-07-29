@@ -1,0 +1,76 @@
+/*=====================================================
+GENERAL LAYOUT
+=====================================================*/
+/*=====================================================
+Utilities
+=====================================================*/
+@use "../utilities/_mixins" as m;
+
+/*=====================================================
+Variables
+=====================================================*/
+:root {
+  --pad-l: 24em;
+  --pad-m: 5em;
+  --pad-s-m: 1.5em; 
+  --pad-s: 1em;
+}
+
+/*=====================================================
+Page padding
+=====================================================*/
+.page-padding,
+.next-event, // Padding for the homepage
+.merch-sample, // Padding for the homepage
+.about { // Padding for the homepage
+  @include m.for-size(big-desktop-up) {
+    padding: 1em var(--pad-l);
+  }
+
+  @include m.for-size(desktop-up) {
+    padding: 1em calc(var(--pad-l) - 11em);
+  }
+
+  @include m.for-size(tablet-landscape-up) {
+    padding: 1em var(--pad-m);
+  }
+
+  @include m.for-size(tablet-portrait-up) {
+    padding: 1em var(--pad-s-m);
+  }
+
+  @include m.for-size(phone-only) {
+    padding: 1em var(--pad-s);
+  }
+}
+
+// Splash page
+.not-found-page {
+  padding-top: 5em;
+}
+
+/*=====================================================
+Sticky Footer [5]
+=====================================================*/
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #1e1c1f;
+  
+  .site__content {
+    flex: 1;
+  } 
+}
+
+/*=====================================================
+Compensating for the audio player being audio-player-boosted
+when reaching the bottom of a page
+=====================================================*/
+.site__content {
+  margin-bottom: 50px;
+
+  @include m.for-size(phone-only) {
+    margin-bottom: 0;
+  }
+}

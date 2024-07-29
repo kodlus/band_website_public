@@ -1,0 +1,18 @@
+/*=====================================================
+FILTER
+=====================================================*/
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  // Lazy fix
+  label {
+    text-align: center;
+  }
+
+  select {
+    width: 120px;
+    padding: 5px;
+  }
+}
