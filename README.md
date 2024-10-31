@@ -23,7 +23,7 @@ I'm relatively perfectionistic, and this project has dragged on for long enough.
 - A bit more UI styling.
 
 # Additional information
-The website started as a handful of ideas and kept evolving throughout the project (e.g., the treemap made with D3.js). How I wrote and organized the code reflects this. In other words, the code probably looks "off" here and there. Namespace pollution, non-dry CSS, and inconsistent folder structures do occur. 
+The website started as a handful of ideas and kept evolving throughout the project (e.g., the treemap made with D3.js). This is reflected in how the code is written and organized. In other words, the code probably looks "off" here and there. Namespace pollution, non-dry CSS, and inconsistent folder structures do unfortunately occur. 
 
 I tested the website's responsiveness on a 24-inch monitor (Firefox), a gen5 iPad from 2017 (Safari), and a Samsung Galaxy S9 (DuckDuckGo). 
 
